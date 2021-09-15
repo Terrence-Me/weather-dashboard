@@ -79,6 +79,7 @@ function storedSearch() {
 }
 
 function renderPastSearches() {
+  liSearch.innerHTML = "";
   for (let i = 0; i < searchArea.length; i++) {
     let area = searchArea[i];
 
