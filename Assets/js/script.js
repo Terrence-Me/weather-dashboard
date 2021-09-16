@@ -71,11 +71,12 @@ function getApi(searchInput) {
 }
 
 function storedSearch() {
+  searchArea = Array.from(new Set(searchArea));
   localStorage.setItem("search", JSON.stringify(searchArea));
 
-  for (let i = 0; i < searchArea.length; i++) {
-    if (searchArea[i] === searchArea[i - 1]) searchArea.splice(i, 1);
-  }
+  //   for (let i = 0; i < searchArea.length; i++) {
+  //     if (searchArea[i] === searchArea[i - 1]) searchArea.splice(i, 1);
+  //   }
 }
 
 function renderPastSearches() {
@@ -145,6 +146,7 @@ function handleSearchSubmit(event) {
   getApi(searchInput);
   renderPastSearches();
   storedSearch();
+  inputval.textContent = "";
   //   init();
 }
 
