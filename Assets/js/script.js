@@ -32,7 +32,7 @@ function getApi(searchInput) {
   inputval.innerHTML = "";
   console.log(input);
   let requestUrl =
-    "http://api.openweathermap.org/data/2.5/weather?q=" +
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
     searchInput +
     "&appid=3726c2e5b5b4c36a97f6c6f8f891b10a&units=imperial";
 
@@ -46,7 +46,7 @@ function getApi(searchInput) {
       let date = new Date(data.dt * 1000);
       curWeather.innerHTML = `<h3 class="city" id="city-date">${
         data.name
-      },<span> ${date.toDateString()}</span> <img src="http://openweathermap.org/img/wn/${
+      },<span> ${date.toDateString()}</span> <img src="https://openweathermap.org/img/wn/${
         data.weather[0].icon
       }.png" alt="${data.weather[0].description}" /></h3>
       <ul class="current">
